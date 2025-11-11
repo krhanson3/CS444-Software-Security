@@ -1,0 +1,12 @@
+ServiceCode,ServiceName,ServiceFee
+111111,Check-up,40
+111112,Blood Test,30
+111113,X-Ray,50
+111114,Vaccination,25
+111115,Ultrasound,60
+111116,Dental Cleaning,75
+111117,Physical Therapy,80
+111118,MRI Scan,200
+111119,Eye Exam,45
+111120,Hearing Test,35
+

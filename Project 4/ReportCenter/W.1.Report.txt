@@ -1,0 +1,8 @@
+Weekly Report for Week 1
+
+All Providers Being Paid: Liam
+Consultations Per Provider: 1
+Total Fee Per Provider: 40
+Total Number of Providers being paid: 1
+Total Number of Consultations: 1
+Combined Fee for All Providers: 40

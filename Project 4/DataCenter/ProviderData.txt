@@ -1,0 +1,12 @@
+Name,Number,Address,City,State,ZIP,Email
+Liam,987321654,34 Spruce Ct,Tuscaloosa,AL,35404,liam@example.com
+Sophia,789654123,67 Willow Rd,Tuscaloosa,AL,35404,sophia@example.com
+Noah,321789654,23 Cherry Ln,Tuscaloosa,AL,35404,noah@example.com
+Ava,654321789,98 Magnolia Dr,Tuscaloosa,AL,35404,ava@example.com
+Ethan,456789123,10 Cypress Cir,Tuscaloosa,AL,35404,ethan@example.com
+Mia,789456123,32 Walnut Ave,Tuscaloosa,AL,35404,mia@example.com
+James,654123987,65 Ash St,Tuscaloosa,AL,35404,james@example.com
+Charlotte,123654789,76 Beech Ln,Tuscaloosa,AL,35404,charlotte@example.com
+Benjamin,321654987,54 Hickory Ct,Tuscaloosa,AL,35404,benjamin@example.com
+Amelia,987123456,87 Poplar St,Tuscaloosa,AL,35404,amelia@example.com
+Eoin,456987123,21 Fir Ave,Tuscaloosa,AL,35404,lucas@example.com,
