@@ -10,12 +10,17 @@ app = Flask(__name__)
 def command_injection1():
     files = request.args.get('files', '')
     # Don't let files be `; rm -rf /`
-    os.system("ls " + files) # $result=BAD
+    # Split files on comma, only allow safe filenames (no metacharacters, no slashes)
+ Error
+Uncontrolled command line
+This command line depends on a .
+Code that passes user input directly to exec, eval, or some other library routine that executes a command, allows the user to execute malicious code.
 
-
-@app.route("/command2")
-def command_injection2():
-    files = request.args.get('files', '')
+    file_list = [f for f in files.split(',') if re.match(r'^[\w.-]+$', f)]
+    if not file_list:
+        return "No valid filenames specified", 400
+    # Use subprocess.run, avoid shell, pass filenames as arguments
+    subprocess.run(['ls'] + file_list)
     # Don't let files be `; rm -rf /`
     subprocess.Popen("ls " + files, shell=True) # $result=BAD
 
