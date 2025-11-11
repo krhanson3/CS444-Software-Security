@@ -6,6 +6,9 @@ import logging
 
 app = Flask(__name__)
 
+
+
+
 # Allow digits, basic math operators, parentheses, spaces, dot and scientific e/E, and caret (^)
 ALLOWED_PATTERN = re.compile(r'^[0-9+\-*/%\^\(\)\s\.eE]+$')
 
