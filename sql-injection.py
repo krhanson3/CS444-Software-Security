@@ -19,6 +19,6 @@ def show_user():
         cursor.execute("SELECT * FROM users WHERE username = %s", [username])
 
         # BAD -- other ways of executing raw SQL code with string interpolation
-        User.objects.annotate(RawSQL("insert into names_file ('name') values ('%s')" % username))
+        User.objects.annotate(RawSQL("insert into names_file ('name') values (%s)", (username,)))
         User.objects.raw("insert into names_file ('name') values ('%s')" % username)
         User.objects.extra("insert into names_file ('name') values ('%s')" % username)
