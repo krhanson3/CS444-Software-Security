@@ -29,6 +29,5 @@ def path_exists_not_sanitizer():
     `os.path.exists` check succeed, and still be able to run commands. An example is
     using the filename `not-there || echo pwned`.
     """
-    path = request.args.get('path', '')
-    if os.path.exists(path):
-        subprocess.run(["ls", path])
+       base_path = '/server/static/listings'  # Change as appropriate for your app
+    if os.path.exists(path):	    user_path = request.args.get('path', '')
