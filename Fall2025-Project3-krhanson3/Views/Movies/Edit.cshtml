@@ -1,0 +1,71 @@
+﻿@model Fall2025_Project3_krhanson3.Models.Movies
+
+@{
+    ViewData["Title"] = "Edit Movie";
+}
+
+<h1>Edit Movie</h1>
+
+<h4>Movies</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MovieId" />
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ReleaseYear" class="control-label"></label>
+                <input asp-for="ReleaseYear" class="form-control" />
+                <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="IMDBUrl" class="control-label"></label>
+                <input asp-for="IMDBUrl" class="form-control" />
+                <span asp-validation-for="IMDBUrl" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Current Poster:</label><br />
+                @if (Model.Poster != null && Model.Poster.Length > 0)
+                {
+                    var base64 = Convert.ToBase64String(Model.Poster);
+                    <img src="data:image/png;base64,@base64" style="width:100px;height:100px;" />
+                }
+                else
+                {
+                    <span>No poster uploaded</span>
+                }
+            </div>
+
+            <div class="form-group">
+                <label>Replace Poster</label>
+                <input type="file" name="PosterFile" class="form-control" />
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Save Changes" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary ms-2">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

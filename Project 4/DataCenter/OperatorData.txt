@@ -1,6 +1,0 @@
-name,id
-John Doe,123456789
-Jane Smith,987654321
-Alice Johnson,456789123
-Bob Brown,789123456
-Emma Davis,123789456
