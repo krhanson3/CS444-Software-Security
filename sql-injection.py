@@ -15,7 +15,8 @@ def show_user():
         User.objects.raw("SELECT * FROM users WHERE username = %s", (username,))
 
         # BAD -- Using string formatting
-        cursor.execute("SELECT * FROM users WHERE username = '%s'" % username)
+        # FIXED -- Use parameters to prevent SQL injection
+        cursor.execute("SELECT * FROM users WHERE username = %s", [username])
 
         # BAD -- other ways of executing raw SQL code with string interpolation
         User.objects.annotate(RawSQL("insert into names_file ('name') values ('%s')" % username))
