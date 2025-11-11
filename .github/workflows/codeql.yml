@@ -17,8 +17,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: ['java']   # Change this to 'java' instead of 'python'
-        
+        language: ['java']   # Analyze Java code
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,7 +30,6 @@ jobs:
           # Optionally, add custom queries for Java analysis if needed
           # queries: security-extended,security-and-quality
 
-      # For Java, CodeQL will try to detect the build system (Maven or Gradle)
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
 
