@@ -109,7 +109,7 @@ def evaluate_code():
         return jsonify({"result": result})
     except ValueError as e:
         logging.exception("Error evaluating user input")
-        return jsonify({"error": str(e)}), 400
+        return jsonify({"error": "Invalid expression"}), 400
     except ZeroDivisionError:
         logging.exception("Division by zero evaluating user input")
         return jsonify({"error": "Division by zero"}), 400
