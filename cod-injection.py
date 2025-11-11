@@ -1,5 +1,6 @@
 import re
 from flask import Flask, request, jsonify
+import logging
 
 app = Flask(__name__)
 
@@ -31,7 +32,8 @@ def evaluate_code():
         result = eval(sanitized_input)  # eval here is safe because input is sanitized
         return jsonify({"result": result})
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        logging.exception("Error evaluating user input")
+        return jsonify({"error": "Internal server error"}), 500
 
 if __name__ == '__main__':
     app.run()
